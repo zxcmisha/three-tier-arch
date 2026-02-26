@@ -1,9 +1,3 @@
-docker-postgres:
-	docker run -e POSTGRES_PASSWORD=1234 -p 5432:5432 -v ./out/pgdata:/var/lib/postgresql -d postgres:17
-
-docker-app:
-	docker run -p 9091:9091 arch-app
-
 compose-db:
 	docker compose up -d db
 
