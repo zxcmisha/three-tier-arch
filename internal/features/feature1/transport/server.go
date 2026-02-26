@@ -8,7 +8,7 @@ import (
 )
 
 type HTTPServer struct {
-	server *http.Server // Добавляем поле для доступа к методу Shutdown
+	server *http.Server
 }
 
 func NewHTTPServer(httpHandler *HTTPHandlers) *HTTPServer {
@@ -29,12 +29,10 @@ func NewHTTPServer(httpHandler *HTTPHandlers) *HTTPServer {
 	}
 }
 
-// StartServer теперь вызывает ListenAndServe у конкретного объекта сервера
 func (s *HTTPServer) StartServer() error {
 	return s.server.ListenAndServe()
 }
 
-// Stop позволяет корректно завершить работу сервера
 func (s *HTTPServer) Stop(ctx context.Context) error {
 	return s.server.Shutdown(ctx)
 }
