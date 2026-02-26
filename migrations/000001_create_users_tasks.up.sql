@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tasks (
+	id SERIAL PRIMARY KEY,
+	title VARCHAR(300) NOT NULL,
+	description VARCHAR(1000),
+	completed BOOLEAN NOT NULL,
+	created_at TIMESTAMP NOT NULL,
+	completed_at TIMESTAMP
+);
